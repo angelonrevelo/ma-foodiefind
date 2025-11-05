@@ -4,8 +4,8 @@
 - [x] Database schema for rooms, users, cravings, and restaurant searches
 - [x] Room management system (create, join, share room codes)
 - [x] User location tracking and management
-- [ ] Google Maps API integration for restaurant search
-- [ ] Restaurant search with niche/non-mainstream filtering
+- [x] Google Maps API integration for restaurant search
+- [x] Restaurant search with niche/non-mainstream filtering
 - [ ] Delivery service filtering (Grab/Foodpanda detection)
 - [ ] Search results display with delivery options
 - [ ] Solo mode support (single user search)
@@ -28,14 +28,14 @@
 - [x] tRPC procedures for room CRUD operations
 - [x] tRPC procedures for user location management
 - [x] tRPC procedures for craving management
-- [ ] tRPC procedures for restaurant search
-- [ ] Google Maps API integration layer
+- [x] tRPC procedures for restaurant search
+- [x] Google Maps API integration layer
 - [ ] Delivery service detection logic (Grab/Foodpanda)
-- [ ] Location aggregation for room members
+- [x] Location aggregation for room members
 - [ ] Search result ranking algorithm
 
 ## Integration & Optimization
-- [ ] Google Maps Places API integration
+- [x] Google Maps Places API integration
 - [ ] Grab and Foodpanda detection/filtering
 - [ ] Geolocation permission handling
 - [ ] Error handling and user feedback
