@@ -43,74 +43,75 @@
 }
 
 :root {
-  --primary: var(--color-blue-700);
-  --primary-foreground: var(--color-blue-50);
-  --sidebar-primary: var(--color-blue-600);
-  --sidebar-primary-foreground: var(--color-blue-50);
-  --chart-1: var(--color-blue-300);
-  --chart-2: var(--color-blue-500);
-  --chart-3: var(--color-blue-600);
-  --chart-4: var(--color-blue-700);
-  --chart-5: var(--color-blue-800);
-  --radius: 0.65rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.235 0.015 65);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.235 0.015 65);
+  /* Pastel color palette for Foodie Find */
+  --primary: oklch(0.7 0.15 45); /* Pastel orange */
+  --primary-foreground: oklch(0.98 0 0);
+  --sidebar-primary: oklch(0.7 0.15 45);
+  --sidebar-primary-foreground: oklch(0.98 0 0);
+  --chart-1: oklch(0.75 0.12 45); /* Pastel orange */
+  --chart-2: oklch(0.7 0.15 280); /* Pastel purple */
+  --chart-3: oklch(0.75 0.12 200); /* Pastel blue */
+  --chart-4: oklch(0.75 0.12 150); /* Pastel pink */
+  --chart-5: oklch(0.75 0.12 120); /* Pastel green */
+  --radius: 0.75rem;
+  --background: oklch(0.96 0.08 45); /* Pastel peach */
+  --foreground: oklch(0.25 0.02 0);
+  --card: oklch(1 0 0); /* White */
+  --card-foreground: oklch(0.25 0.02 0);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.235 0.015 65);
-  --secondary: oklch(0.98 0.001 286.375);
-  --secondary-foreground: oklch(0.4 0.015 65);
-  --muted: oklch(0.967 0.001 286.375);
-  --muted-foreground: oklch(0.552 0.016 285.938);
-  --accent: oklch(0.967 0.001 286.375);
-  --accent-foreground: oklch(0.141 0.005 285.823);
+  --popover-foreground: oklch(0.25 0.02 0);
+  --secondary: oklch(0.85 0.12 280); /* Pastel purple */
+  --secondary-foreground: oklch(0.25 0.02 0);
+  --muted: oklch(0.92 0.08 45); /* Light peach */
+  --muted-foreground: oklch(0.5 0.02 0);
+  --accent: oklch(0.7 0.15 280); /* Pastel purple */
+  --accent-foreground: oklch(0.98 0 0);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(0.92 0.004 286.32);
-  --input: oklch(0.92 0.004 286.32);
-  --ring: oklch(0.623 0.214 259.815);
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.235 0.015 65);
-  --sidebar-accent: oklch(0.967 0.001 286.375);
-  --sidebar-accent-foreground: oklch(0.141 0.005 285.823);
-  --sidebar-border: oklch(0.92 0.004 286.32);
-  --sidebar-ring: oklch(0.623 0.214 259.815);
+  --border: oklch(0.92 0.08 45);
+  --input: oklch(0.94 0.08 45);
+  --ring: oklch(0.7 0.15 280);
+  --sidebar: oklch(1 0 0);
+  --sidebar-foreground: oklch(0.25 0.02 0);
+  --sidebar-accent: oklch(0.7 0.15 280);
+  --sidebar-accent-foreground: oklch(0.98 0 0);
+  --sidebar-border: oklch(0.92 0.08 45);
+  --sidebar-ring: oklch(0.7 0.15 280);
 }
 
 .dark {
-  --primary: var(--color-blue-700);
-  --primary-foreground: var(--color-blue-50);
-  --sidebar-primary: var(--color-blue-500);
-  --sidebar-primary-foreground: var(--color-blue-50);
-  --background: oklch(0.141 0.005 285.823);
-  --foreground: oklch(0.85 0.005 65);
-  --card: oklch(0.21 0.006 285.885);
-  --card-foreground: oklch(0.85 0.005 65);
-  --popover: oklch(0.21 0.006 285.885);
-  --popover-foreground: oklch(0.85 0.005 65);
-  --secondary: oklch(0.24 0.006 286.033);
-  --secondary-foreground: oklch(0.7 0.005 65);
-  --muted: oklch(0.274 0.006 286.033);
-  --muted-foreground: oklch(0.705 0.015 286.067);
-  --accent: oklch(0.274 0.006 286.033);
-  --accent-foreground:  oklch(0.92 0.005 65);
+  --primary: oklch(0.65 0.15 45);
+  --primary-foreground: oklch(0.98 0 0);
+  --sidebar-primary: oklch(0.65 0.15 45);
+  --sidebar-primary-foreground: oklch(0.98 0 0);
+  --background: oklch(0.25 0.08 45); /* Dark peach-ish */
+  --foreground: oklch(0.92 0.08 45);
+  --card: oklch(0.32 0.08 45);
+  --card-foreground: oklch(0.92 0.08 45);
+  --popover: oklch(0.32 0.08 45);
+  --popover-foreground: oklch(0.92 0.08 45);
+  --secondary: oklch(0.4 0.12 280);
+  --secondary-foreground: oklch(0.85 0.08 45);
+  --muted: oklch(0.35 0.08 45);
+  --muted-foreground: oklch(0.75 0.08 45);
+  --accent: oklch(0.65 0.15 280);
+  --accent-foreground: oklch(0.98 0 0);
   --destructive: oklch(0.704 0.191 22.216);
   --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.488 0.243 264.376);
-  --chart-1: var(--color-blue-300);
-  --chart-2: var(--color-blue-500);
-  --chart-3: var(--color-blue-600);
-  --chart-4: var(--color-blue-700);
-  --chart-5: var(--color-blue-800);
-  --sidebar: oklch(0.21 0.006 285.885);
-  --sidebar-foreground: oklch(0.85 0.005 65);
-  --sidebar-accent: oklch(0.274 0.006 286.033);
-  --sidebar-accent-foreground:  oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.488 0.243 264.376);
+  --border: oklch(0.4 0.08 45);
+  --input: oklch(0.4 0.08 45);
+  --ring: oklch(0.65 0.15 280);
+  --chart-1: oklch(0.75 0.12 45);
+  --chart-2: oklch(0.7 0.15 280);
+  --chart-3: oklch(0.75 0.12 200);
+  --chart-4: oklch(0.75 0.12 150);
+  --chart-5: oklch(0.75 0.12 120);
+  --sidebar: oklch(0.32 0.08 45);
+  --sidebar-foreground: oklch(0.92 0.08 45);
+  --sidebar-accent: oklch(0.65 0.15 280);
+  --sidebar-accent-foreground: oklch(0.98 0 0);
+  --sidebar-border: oklch(0.4 0.08 45);
+  --sidebar-ring: oklch(0.65 0.15 280);
 }
 
 @layer base {
@@ -119,6 +120,33 @@
   }
   body {
     @apply bg-background text-foreground;
+    position: relative;
+    overflow-x: hidden;
+  }
+  /* Food emoji background */
+  body::before {
+    content: '🍕 🍔 🍜 🍱 🍛 🍲 🥘 🍝 🍤 🥟 🍙 🍚 🍣 🍢 🍡 🍧 🍨 🍦 🍰 🎂 🍪 🍩 🍫 🍬 🍭 🍮 🍯 🍼 🥛 🍶 🍵 ☕ 🍷 🍸 🍹 🍺 🍻 🥂 🍾 🍿 🥤 🧃 🧋';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 200%;
+    font-size: 2.5rem;
+    opacity: 0.06;
+    pointer-events: none;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    z-index: -1;
+    line-height: 1.4;
+    animation: drift 30s linear infinite;
+  }
+  @keyframes drift {
+    0% {
+      transform: translate(0, 0) rotate(0deg);
+    }
+    100% {
+      transform: translate(-50%, -50%) rotate(360deg);
+    }
   }
   button:not(:disabled),
   [role="button"]:not([aria-disabled="true"]),
@@ -173,5 +201,18 @@
       padding-right: 2rem;
       max-width: 1280px; /* Standard content width */
     }
+  }
+
+  /* Pastel button styling */
+  .btn-pastel {
+    @apply bg-accent text-accent-foreground hover:opacity-90 rounded-lg transition-all duration-200 font-medium;
+  }
+
+  .btn-pastel-secondary {
+    @apply bg-muted text-foreground hover:opacity-80 rounded-lg transition-all duration-200 font-medium;
+  }
+
+  .card-pastel {
+    @apply bg-card text-card-foreground rounded-xl shadow-sm border border-border;
   }
 }

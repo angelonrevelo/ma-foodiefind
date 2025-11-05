@@ -1,6 +1,6 @@
-import { eq } from "drizzle-orm";
+import { and, eq } from "drizzle-orm";
 import { drizzle } from "drizzle-orm/mysql2";
-import { InsertUser, users } from "../drizzle/schema";
+import { InsertUser, users, rooms, roomMembers, userLocations, cravings, searchResults, InsertSearchResult } from "../drizzle/schema";
 import { ENV } from './_core/env';
 
 let _db: ReturnType<typeof drizzle> | null = null;
@@ -89,4 +89,109 @@ export async function getUserByOpenId(openId: string) {
   return result.length > 0 ? result[0] : undefined;
 }
 
-// TODO: add feature queries here as your schema grows.
+// Room queries
+export async function createRoom(name: string, createdById: number, code: string) {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+  
+  const result = await db.insert(rooms).values({
+    name,
+    createdById,
+    code,
+  });
+  
+  return result;
+}
+
+export async function getRoomByCode(code: string) {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+  
+  const result = await db.select().from(rooms).where(eq(rooms.code, code)).limit(1);
+  return result.length > 0 ? result[0] : undefined;
+}
+
+export async function getRoomById(roomId: number) {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+  
+  const result = await db.select().from(rooms).where(eq(rooms.id, roomId)).limit(1);
+  return result.length > 0 ? result[0] : undefined;
+}
+
+// Room member queries
+export async function addRoomMember(roomId: number, userId: number) {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+  
+  return db.insert(roomMembers).values({ roomId, userId });
+}
+
+export async function getRoomMembers(roomId: number) {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+  
+  return db.select().from(roomMembers).where(eq(roomMembers.roomId, roomId));
+}
+
+// Location queries
+export async function updateUserLocation(userId: number, roomId: number, latitude: string, longitude: string, address?: string) {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+  
+  const existing = await db.select().from(userLocations).where(
+    and(eq(userLocations.userId, userId), eq(userLocations.roomId, roomId))
+  ).limit(1);
+  
+  if (existing.length > 0) {
+    return db.update(userLocations).set({ latitude, longitude, address }).where(
+      and(eq(userLocations.userId, userId), eq(userLocations.roomId, roomId))
+    );
+  } else {
+    return db.insert(userLocations).values({ userId, roomId, latitude, longitude, address });
+  }
+}
+
+export async function getRoomLocations(roomId: number) {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+  
+  return db.select().from(userLocations).where(eq(userLocations.roomId, roomId));
+}
+
+// Craving queries
+export async function addCraving(roomId: number, userId: number, craving: string) {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+  
+  return db.insert(cravings).values({ roomId, userId, craving });
+}
+
+export async function getRoomCravings(roomId: number) {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+  
+  return db.select().from(cravings).where(eq(cravings.roomId, roomId));
+}
+
+export async function deleteCraving(cravingId: number) {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+  
+  return db.delete(cravings).where(eq(cravings.id, cravingId));
+}
+
+// Search results queries
+export async function saveSearchResult(data: InsertSearchResult) {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+  
+  return db.insert(searchResults).values(data);
+}
+
+export async function getRoomSearchResults(roomId: number) {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+  
+  return db.select().from(searchResults).where(eq(searchResults.roomId, roomId));
+}
