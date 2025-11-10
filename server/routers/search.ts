@@ -2,7 +2,7 @@ import { z } from "zod";
 import { protectedProcedure, router } from "../_core/trpc";
 import { getRoomLocations, getRoomCravings, getRoomSearchResults, saveSearchResult } from "../db";
 import { calculateCentroid } from "../utils/location";
-import { searchNearbyPlaces } from "../utils/googleMaps";
+import { searchNearbyPlaces } from "../utils/places";
 
 export const searchRouter = router({
   searchRestaurants: protectedProcedure
