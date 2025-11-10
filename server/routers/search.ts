@@ -56,8 +56,8 @@ export const searchRouter = router({
             longitude: result.location.longitude.toString(),
             rating: result.rating?.toString(),
             userRatingCount: result.userRatingCount,
-            photoUrl: result.photoUrl,
-            websiteUrl: result.websiteUri,
+            photoUrl: result.photoUrl ?? null,
+            websiteUrl: result.websiteUri ?? null,
             hasDelivery: result.delivery ? 1 : 0,
             hasDineIn: result.dineIn ? 1 : 0,
           });
