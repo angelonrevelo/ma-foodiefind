@@ -1,7 +1,6 @@
 ![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=black)
 ![tRPC](https://img.shields.io/badge/tRPC-11-2596BE?logo=trpc&logoColor=white)
 ![MySQL](https://img.shields.io/badge/Drizzle-MySQL-4479A1?logo=mysql&logoColor=white)
-![license](https://img.shields.io/badge/license-MIT%20(package.json)-green)
 ![status](https://img.shields.io/badge/status-prototype-orange)
 
 # Foodie Find
